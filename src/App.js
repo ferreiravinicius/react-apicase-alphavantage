@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import AlphaAPI from './apis/alphavantage';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    const fetch = async () => {
+      const { success, result } = await AlphaAPI.Intraday.getAll("PETR4.SA");
+      console.log(`success: ${success}`);
+      console.log(result);
+    };
+    fetch();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Testing requests with React and Apicase</h1>
+      <h2>Just a simple string, focus on console!</h2>
     </div>
   );
-}
+};
 
 export default App;

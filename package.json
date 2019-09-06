@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apicase/adapter-fetch": "^0.15.1",
+    "@apicase/core": "^0.17.2",
+    "@apicase/services": "^0.8.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1"
